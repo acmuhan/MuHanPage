@@ -20,6 +20,8 @@ This project was inspired by following projects:
 
 - [Diu](https://ddiu.io/) (reference)
 
+- [shar's desktop](https://www.sharyap.com/) (reference)
+
 ## Features
 - [x] Support dual themes
 - [x] Smooth transition while switching themes
