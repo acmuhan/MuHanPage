@@ -14,10 +14,10 @@
   },
   "websites": [
     {"title": "Blog", "desc": "Tech blogs", "icon": "./static/img/blog.svg", "url": "https://blog.xuxiny.top"
-  ]
+  ],
   "projects": [
     {"title": "NCM Downloader", "desc": "A powerful NCM Donwloader that supports built-in metadata", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/NCM-Downloader"}
-  ]
+  ],
   "intro": {
     "lines": [
       "Hi, I'm Caleb, really into tech & language, exploring various fields. i..."
