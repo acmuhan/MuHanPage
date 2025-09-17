@@ -1,0 +1,43 @@
+{
+  "profile": {
+    "name": "MuHan",
+    "title": "Full Stack Developer",
+    "motto": "Your time is limited, so don't waste time living someone else's life",
+    "avatar": "favicon.ico",
+    "location": "223.90.128.0",
+    "school": "Qiushi high school",
+    "tags": ["Developer", "Student", "Python","Go","Html","CSS","Frontend","English"]
+  },
+  "hero": {
+    "snakeLight": "./static/svg/snake-Light.svg",
+    "snakeDark": "./static/svg/snake-Dark.svg"
+  },
+  "websites": [
+    {"title": "Blog", "desc": "Tech blogs", "icon": "./static/img/blog.svg", "url": "https://blog.xuxiny.top"}
+  ],
+  "projects": [
+    {"title": "NCM Downloader", "desc": "A powerful NCM Donwloader that supports built-in metadata", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/NCM-Downloader"}
+  ],
+  "intro": {
+    "lines": [
+      "Hi, I'm MuHan exploring various fields. i..."
+    ],
+    "bullets": [
+      "create easy-to-use software",
+      "make open source projects on Github",
+      "wanna learn photography & editing",
+      "am learning foregin languages"
+    ],
+    "interests": ["development", "coding in Python,Go,Html,Css", "artificial intelligence", "Network verification"],
+    "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho)"
+  },
+  "faq": [
+    {"q": "When did you start programming?", "a": "I started programming with Scratch when i was in elementary school ... deployed my first ever website on Sep. 20 2021 (it was a blog)"},
+    {"q": "How can I contact you?", "a": "You can reach me through GitHub and Email"},
+    {"q": "How did you fall into the rabbit hole of language learning?", "a": "inspired by this vid & yt vids related to comprehensible input", "links": [{"text": "this vid", "href": "https://www.bilibili.com/video/BV1ns4y1A7fj/"}]}
+  ],
+  "footer": {
+    "copyright": "© 2022-2025 MuHan",
+    "sourceUrl": "https://github.com/acmuhan"
+  }
+}
