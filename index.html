@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- 文档元信息（编码、兼容、标题、站点描述/关键词、视口）以及样式表引入 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hello, I'm MuHan</title>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./static/css/style.css?v=1.33">
 
 
+    <!-- 根据 Cookie 在首屏同步应用深色主题，避免闪烁 -->
     <script>
         (function() {
             var theme = document.cookie.match(/themeState=([^;]+)/);
@@ -24,13 +26,15 @@
 </head>
 <body>
 
+<!-- 主容器：左侧信息区 + 右侧内容区 -->
+
 <div class="main">
 
     <div onclick="left()" class="left">
         <div class="left-main">
             
             <div  class="logo" style="background-image: url(favicon.ico);">
-                <!-- 头像挂件 -->
+                <!-- 头像挂件（可替换为 img 标签显示真实头像） -->
                 <!-- <img style="display: none; position: absolute;top:-15%;left:-10%;width: 120%; aspect-ratio: 1/1;" src="" alt="avatar"> -->
             </div>
             
@@ -45,7 +49,7 @@
                             d="M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.705882 686.682353 180.705882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z"
                             fill="#2c2c2c" p-id="1480"></path>
                     </svg>
-                    <!-- Location label -->
+                    <!-- 位置（Location） -->
                     223.90.128.0
                 </div>
                 <div class="left-div-item">
@@ -55,10 +59,11 @@
                             d="M729.6 234.666667H294.4V157.866667a51.2 51.2 0 0 1 51.2-51.2h332.8a51.2 51.2 0 0 1 51.2 51.2v76.8z m179.2 51.2a51.2 51.2 0 0 1 51.2 51.2v512a51.2 51.2 0 0 1-51.2 51.2H115.2a51.2 51.2 0 0 1-51.2-51.2v-512a51.2 51.2 0 0 1 51.2-51.2h793.557333z m-768 172.032c0 16.384 13.312 29.696 29.696 29.696h683.008a29.696 29.696 0 1 0 0-59.392H170.410667a29.696 29.696 0 0 0-29.696 29.696z m252.416 118.784c0 16.384 13.312 29.696 29.696 29.696h178.176a29.696 29.696 0 1 0 0-59.392H422.912a29.738667 29.738667 0 0 0-29.696 29.696z"
                             fill="#666666" p-id="2475"></path>
                     </svg>
-                    <!-- School label -->
+                    <!-- 学校（School） -->
                     Qiushi high school
                 </div>
             </div>
+            <!-- 标签列表（技能/身份/语言等） -->
             <div class="left-div left-tag">
                 <div class="left-tag-item">Developer</div>
                 <div class="left-tag-item">Student</div>
@@ -71,6 +76,7 @@
             </div>
 
 
+            <!-- 时间线（重要事件回顾） -->
             <div class="left-div left-time">
                 <ul id="line">
                     <li>
@@ -102,6 +108,7 @@
     <div class="right">
 
 
+        <!-- 页头：欢迎语 / 职位 / 座右铭 / 社交图标 / 主题开关 / 装饰 SVG -->
         <header>
             <div class="welcome">Hello, I'm <span class="gradientText">MuHan</span></div>
             <div class="description">👦 <span class="purpleText"> Full Stack</span> Developer
@@ -113,9 +120,9 @@
             </div>
             <div class="iconContainer">
 
-                <!---->
+                <!-- 社交与操作图标容器 -->
                 
-                <!-- Github -->
+                <!-- Github 主页 -->
                 <a class="iconItemLong" target="_blank" href="https://github.com/acmuhan">
                     <svg t="1704870335945" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="2487" width="22px" height="22px">
@@ -126,28 +133,28 @@
                     </svg>
                     <div class="iconTip">Github</div>
                 </a>
-                <!---->
+                <!-- 预留占位（可继续追加其他图标） -->
                 
-                <!-- twitter -->
+                <!-- Twitter（X） -->
                 <a class="iconItem" target="_blank" href="https://twitter.com/intent/user?user_id=1564057561996832770">
                     <svg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg'>
                         <path fill='currentColor' d='M22.212 5.656a8.384 8.384 0 0 1-2.401.658A4.195 4.195 0 0 0 21.649 4c-.82.488-1.719.83-2.655 1.015a4.182 4.182 0 0 0-7.126 3.814a11.874 11.874 0 0 1-8.621-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.739 2.731 1.86 3.481a4.169 4.169 0 0 1-1.894-.523v.051a4.185 4.185 0 0 0 3.355 4.102a4.205 4.205 0 0 1-1.89.072A4.185 4.185 0 0 0 8.02 16.65a8.394 8.394 0 0 1-6.192 1.732a11.831 11.831 0 0 0 6.41 1.88c7.694 0 11.9-6.373 11.9-11.9c0-.18-.004-.362-.012-.541a8.497 8.497 0 0 0 2.086-2.164'/>
                     </svg>
                 </a>
 
-                <!-- bilibili -->
+                <!-- bilibili 空间 -->
                 <a class="iconItem" target="_blank" href="https://space.bilibili.com/626885218">
                     <svg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg'>
                         <path fill='currentColor' d='M18.223 3.086a1.25 1.25 0 0 1 0 1.768L17.08 5.996h1.17A3.75 3.75 0 0 1 22 9.746v7.5a3.75 3.75 0 0 1-3.75 3.75H5.75A3.75 3.75 0 0 1 2 17.246v-7.5a3.75 3.75 0 0 1 3.75-3.75h1.166L5.775 4.855a1.25 1.25 0 0 1 1.767-1.768l2.652 2.651c.079.08.145.166.198.258h3.213c.053-.092.12-.18.199-.259l2.651-2.651a1.25 1.25 0 0 1 1.768 0Zm.027 5.42H5.75a1.25 1.25 0 0 0-1.247 1.157l-.003.093v7.5c0 .66.51 1.2 1.157 1.247l.093.003h12.5a1.25 1.25 0 0 0 1.247-1.156l.003-.094v-7.5c0-.69-.56-1.25-1.25-1.25Zm-10 2.5c.69 0 1.25.56 1.25 1.25v1.25a1.25 1.25 0 0 1-2.5 0v-1.25c0-.69.56-1.25 1.25-1.25Zm7.5 0c.69 0 1.25.56 1.25 1.25v1.25a1.25 1.25 0 0 1-2.5 0v-1.25c0-.69.56-1.25 1.25-1.25Z'/>
                     </svg>
                 </a>
 
-                <!-- email -->
+                <!-- 邮件联系 -->
                 <a class="iconItem" target="_blank" href="mailto:contact@xuxiny.top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/></svg>
                 </a>
 
-                <!-- sponsor -->
+                <!-- 赞助卡片（点击弹窗展示） -->
                 <a class="iconItem" target="_blank" onclick="PopUp('./static/img/sponsor.jpg')">
                     <svg width="1.2em" height="1.2em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.8401 19.345H15.9101C17.4101 19.385 18.6101 20.605 18.6101 22.105C18.6101 23.385 17.7401 24.455 16.5601 24.775V25.895C16.5601 26.295 16.2401 26.615 15.8401 26.615C15.4401 26.615 15.1201 26.295 15.1201 25.895V24.775C13.9401 24.455 13.0701 23.385 13.0701 22.105C13.0701 21.705 13.3901 21.385 13.7901 21.385C14.1901 21.385 14.5101 21.705 14.5101 22.105C14.5101 22.845 15.1001 23.435 15.8301 23.435C16.5601 23.435 17.1601 22.835 17.1601 22.105C17.1601 21.375 16.5601 20.775 15.8301 20.775H15.7601C14.2701 20.735 13.0701 19.515 13.0701 18.015C13.0701 16.735 13.9401 15.665 15.1201 15.345V14.225C15.1201 13.825 15.4401 13.505 15.8401 13.505C16.2401 13.505 16.5601 13.825 16.5601 14.225V15.345C17.7401 15.665 18.6101 16.735 18.6101 18.015C18.6101 18.415 18.2901 18.735 17.8901 18.735C17.4901 18.735 17.1701 18.415 17.1701 18.015C17.1701 17.285 16.5701 16.685 15.8401 16.685C15.1101 16.685 14.5101 17.285 14.5101 18.015C14.5101 18.745 15.1101 19.345 15.8401 19.345Z" fill="#212121"/>
@@ -155,7 +162,7 @@
                     </svg>
                 </a>
 
-                <!-- sidebar for mobiles -->
+                <!-- 移动端侧边栏开关 -->
                 <a class="iconItem" href="javascript:void(0)" onclick="left()">
                     <svg t="1706175679525" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="1880" width="22px" height="22px">
@@ -165,7 +172,7 @@
                     </svg>
                 </a>
 
-                <!-- switch -->
+                <!-- 明暗主题开关（Switch） -->
                 <a class="iconItem switch" href="javascript:void(0)">
                 <div class="onoffswitch">
                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
@@ -178,12 +185,13 @@
                 <!---->
             </div>
 
+            <!-- 装饰：贪吃蛇 SVG（随主题切换） -->
             <div class="tanChiShe">
                 <img id="tanChiShe" src="./static/svg/snake-Light.svg" alt="">
             </div>
         </header>
 
-        <!-- Tab buttons -->
+        <!-- 选项卡按钮（Tab Buttons） -->
         <div class="button-container">
             <button class="tab-button but-active" onclick="openTab('tab1')">Projects</button>
             <button class="tab-button" onclick="openTab('tab2')">Intro</button>
@@ -201,7 +209,7 @@
                 WebSites
             </div>
             <div class="projectList">
-                <!-- 项目列表开始 -->
+                <!-- 网站列表（来自配置，可按需扩展） -->
                 <!---->
                 <a class="projectItem" target="_blank" href="https://blog.xuxiny.top">
                     <div class="projectItemLeft">
@@ -224,7 +232,7 @@
                 Projects
             </div>
             <div class="projectList">
-                <!-- 项目列表开始 -->
+                <!-- 项目列表（来自配置，可按需扩展） -->
                 <a class="projectItem" target="_blank" href="https://github.com/xxynet/NCM-Downloader">
                     <div class="projectItemLeft">
                         <h1>NCM Downloader</h1>
@@ -246,7 +254,7 @@
                 Skills
             </div>
             <div class="skill">
-                <!-- 前往https://skillicons.dev/ 生成，一个pc端，一个移动端，区别是一行的个数 -->
+                <!-- 技能图标：前往 https://skillicons.dev/ 生成（PC/WAP 两套，区别是一行个数） -->
                 <img id="skillPc" src="./static/svg/skillPc.svg" alt="" srcset="">
                 <img id="skillWap" src="./static/svg/skillWap.svg" alt="" srcset="">
             </div>
@@ -266,6 +274,7 @@
                 Introduction
             </div>
             <div class="intro-content">
+                <!-- 自我介绍（文本 + 列表 + 兴趣 + 语言能力） -->
                 <p>Hi, I'm MuHan exploring various fields. i...</p>
 
                 <ul class="intro-ul">
@@ -302,6 +311,7 @@
                 FAQ
             </div>
             <div class="faq-container">
+                <!-- 常见问题（手风琴）列表 -->
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <span>When did you start programming?</span>
@@ -352,14 +362,15 @@
             </div>
         </div>
 
+        <!-- 页脚（版权与源码链接） -->
         <footer>
             © 2022-2025 MuHan &nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="https://github.com/acmuhan" target="_blank" class="footer-links">SourceCode</a>
         </footer>
 
     </div>
-</div> <!-- main结束 -->
-<!--弹窗-->
+</div> <!-- 主容器结束 -->
+<!-- 图片弹窗（赞助/预览等） -->
 
 <div class="pop-up">
     <div class="pop-up-main">
@@ -375,6 +386,7 @@
     </div>
 </div>
 
+<!-- 页面脚本：交互/主题/音效/FAQ 折叠等功能 -->
 <script src="./static/js/script.js?v=1.33"> </script>
 
 </body>

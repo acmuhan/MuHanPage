@@ -1,17 +1,21 @@
 @font-face {
     font-family: "a";
-    /*中文字体*/
+    /* 中文字体（按需引入本地/在线字体文件） */
     src: url();
     font-display: swap;
 }
 
 @font-face {
     font-family: "b";
-    /*English font*/
+    /* 英文字体（按需引入本地/在线字体文件） */
     src: url();
     font-display: swap;
 }
 
+/*
+    全局 CSS 变量（浅色主题默认值）
+    暗色主题会在 html[data-theme="dark"] 中覆盖这些变量
+*/
 :root {
     --main-bg-color: #f5f7fa;
     --main-text-color: #222831;
@@ -77,6 +81,7 @@ a:focus {
 }
 
 
+/* 暗色主题变量覆盖 */
 html[data-theme="dark"] {
     --main-bg-color: rgb(0, 0, 0);
     --main-text-color: #fff;
@@ -109,6 +114,7 @@ html[data-theme="dark"] {
 }
 
 
+/* 页面主体布局：居中容器、背景与文本主色 */
 body {
     display: flex;
     height: 100%;
@@ -373,8 +379,9 @@ body {
 }
 
 .gradientText {
-
+    
     -webkit-background-clip: text;
+    background-clip: text; /* 标准属性，增强兼容性 */
     -webkit-text-fill-color: transparent;
     background-size: 200%;
     background-position: 0%;
@@ -530,9 +537,7 @@ body {
     transition: all 0.4s ease;
 }
 
-.title:hover {
-    /*transform: translateY(-5px);*/
-}
+/* 删除占位的悬停样式，避免空规则集 */
 
 .button-container {
     display: flex;
@@ -546,9 +551,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.button-container:hover {
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
-}
+/* 删除占位的悬停样式，避免空规则集 */
 
 .tab-button {
     flex: 1;
@@ -886,11 +889,7 @@ footer {
         font-size: 15px;
     }
 
-    .projectItem:hover h1 {
-
-        /* font-size: 20px; */
-
-    }
+    /* 删除占位的悬停样式，避免空规则集 */
 
     .projectList {
         display: flex;
@@ -1039,6 +1038,7 @@ footer {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    user-select: none; /* 标准属性，增强兼容性 */
 }
 
 .onoffswitch-checkbox {
