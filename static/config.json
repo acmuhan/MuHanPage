@@ -28,7 +28,7 @@
       "wanna learn photography & editing",
       "am learning foregin languages"
     ],
-    "interests": ["web development", "coding in Python", "artificial intelligence", "language learning"],
+    "interests": ["development", "coding in Python,Go,Html,Css", "artificial intelligence", "language learning"],
     "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho)"
   },
   "faq": [
@@ -37,7 +37,7 @@
     {"q": "How did you fall into the rabbit hole of language learning?", "a": "inspired by this vid & yt vids related to comprehensible input", "links": [{"text": "this vid", "href": "https://www.bilibili.com/video/BV1ns4y1A7fj/"}]}
   ],
   "footer": {
-    "copyright": "© 2024-2025 Caleb XXY",
+    "copyright": "© 2022-2025 MuHan",
     "sourceUrl": "https://github.com/acmuhan"
   }
 }
