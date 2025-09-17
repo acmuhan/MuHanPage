@@ -46,7 +46,7 @@
                             fill="#2c2c2c" p-id="1480"></path>
                     </svg>
                     <!-- Location label -->
-                    127.0.0.1
+                    <span id="profile-location">127.0.0.1</span>
                 </div>
                 <div class="left-div-item">
                     <svg t="1705773906032" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -56,10 +56,10 @@
                             fill="#666666" p-id="2475"></path>
                     </svg>
                     <!-- School label -->
-                    Unknown
+                    <span id="profile-school">Unknown</span>
                 </div>
             </div>
-            <div class="left-div left-tag">
+            <div class="left-div left-tag" id="profile-tags">
                 <div class="left-tag-item">Developer</div>
                 <div class="left-tag-item">Student</div>
                 <div class="left-tag-item">Python</div>
@@ -101,10 +101,10 @@
 
 
         <header>
-            <div class="welcome">Hello, I'm <span class="gradientText">Caleb XXY</span></div>
-            <div class="description">👦 <span class="purpleText"> Full Stack</span> Developer
+            <div class="welcome">Hello, I'm <span id="welcome-name" class="gradientText">Caleb XXY</span></div>
+            <div class="description">👦 <span class="purpleText"><span id="welcome-title"> Full Stack</span> Developer</span>
             </div>
-            <div class="description">📝 Your time is 
+            <div class="description" id="welcome-motto">📝 Your time is 
                 <span class="purpleText textBackground">limited</span>, so don't waste 
                 <span class="purpleText textBackground">time</span> 
                 living someone else's life
@@ -198,7 +198,7 @@
                 </svg>
                 WebSites
             </div>
-            <div class="projectList">
+            <div class="projectList" id="websites-list">
                 <!-- 项目列表开始 -->
                 <!---->
                 <a class="projectItem" target="_blank" href="https://blog.xuxiny.top">
@@ -252,7 +252,7 @@
                 </svg>
                 Projects
             </div>
-            <div class="projectList">
+            <div class="projectList" id="projects-list">
                 <!-- 项目列表开始 -->
                 <a class="projectItem" target="_blank" href="https://github.com/xxynet/NCM-Downloader">
                     <div class="projectItemLeft">
@@ -435,6 +435,7 @@
 </div>
 
 <script src="./static/js/script.js?v=1.33"> </script>
+<script src="./static/js/config-loader.js?v=1.0"></script>
 
 </body>
 

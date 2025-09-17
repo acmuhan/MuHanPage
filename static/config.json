@@ -1,0 +1,49 @@
+{
+  "profile": {
+    "name": "Caleb XXY",
+    "title": "Full Stack Developer",
+    "motto": "Your time is limited, so don't waste time living someone else's life",
+    "avatar": "favicon.ico",
+    "location": "127.0.0.1",
+    "school": "Unknown",
+    "tags": ["Developer", "Student", "Python", "Frontend", "English", "Japanese"]
+  },
+  "hero": {
+    "snakeLight": "./static/svg/snake-Light.svg",
+    "snakeDark": "./static/svg/snake-Dark.svg"
+  },
+  "websites": [
+    {"title": "Blog", "desc": "Tech blogs", "icon": "./static/img/blog.svg", "url": "https://blog.xuxiny.top"},
+    {"title": "Navigation", "desc": "Web collections", "icon": "./static/img/nav.svg", "url": "https://nav.xuxiny.top"},
+    {"title": "Time Progress", "desc": "Progress bar & Count down", "icon": "./static/img/time.svg", "url": "https://time.xuxiny.top"},
+    {"title": "Browsing Info", "desc": "Check your browswer & system info via UA", "icon": "./static/img/info.svg", "url": "https://info.xuxiny.top"}
+  ],
+  "projects": [
+    {"title": "NCM Downloader", "desc": "A powerful NCM Donwloader that supports built-in metadata", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/NCM-Downloader"},
+    {"title": "HomePage", "desc": "An elegant personal honepage", "icon": "./static/img/home.svg", "url": "https://github.com/xxynet/HomePage"},
+    {"title": "ncm-dl-docker", "desc": "Docker version of NCM-Downloader", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/ncm-dl-docker"},
+    {"title": "device-status", "desc": "An elegant web page that displays your devices' status", "icon": "./static/img/info.svg", "url": "https://github.com/xxynet/device-status"}
+  ],
+  "intro": {
+    "lines": [
+      "Hi, I'm Caleb, really into tech & language, exploring various fields. i..."
+    ],
+    "bullets": [
+      "create easy-to-use software",
+      "make open source projects on Github",
+      "wanna learn photography & editing",
+      "am learning foregin languages"
+    ],
+    "interests": ["web development", "coding in Python", "artificial intelligence", "language learning"],
+    "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho) and a little bit of Japanese/日本語"
+  },
+  "faq": [
+    {"q": "When did you start programming?", "a": "I started programming with Scratch when i was in elementary school ... deployed my first ever website on Sep. 20 2021 (it was a blog)"},
+    {"q": "How can I contact you?", "a": "You can reach me through GitHub and Email"},
+    {"q": "How did you fall into the rabbit hole of language learning?", "a": "inspired by this vid & yt vids related to comprehensible input", "links": [{"text": "this vid", "href": "https://www.bilibili.com/video/BV1ns4y1A7fj/"}]}
+  ],
+  "footer": {
+    "copyright": "© 2024-2025 Caleb XXY",
+    "sourceUrl": "https://github.com/xxynet/HomePage"
+  }
+}
