@@ -1,28 +1,23 @@
 {
   "profile": {
-    "name": "Caleb XXY",
+    "name": "MuHan",
     "title": "Full Stack Developer",
     "motto": "Your time is limited, so don't waste time living someone else's life",
     "avatar": "favicon.ico",
-    "location": "127.0.0.1",
-    "school": "Unknown",
-    "tags": ["Developer", "Student", "Python", "Frontend", "English", "Japanese"]
+    "location": "223.90.128.0",
+    "school": "Qiushi high school",
+    "tags": ["Developer", "Student", "Python","Go","Html","CSS","Frontend","English"]
   },
   "hero": {
     "snakeLight": "./static/svg/snake-Light.svg",
     "snakeDark": "./static/svg/snake-Dark.svg"
   },
   "websites": [
-    {"title": "Blog", "desc": "Tech blogs", "icon": "./static/img/blog.svg", "url": "https://blog.xuxiny.top"},
-    {"title": "Navigation", "desc": "Web collections", "icon": "./static/img/nav.svg", "url": "https://nav.xuxiny.top"},
-    {"title": "Time Progress", "desc": "Progress bar & Count down", "icon": "./static/img/time.svg", "url": "https://time.xuxiny.top"},
-    {"title": "Browsing Info", "desc": "Check your browswer & system info via UA", "icon": "./static/img/info.svg", "url": "https://info.xuxiny.top"}
+    {"title": "Blog", "desc": "Tech blogs", "icon": "./static/img/blog.svg", "url": "https://blog.xuxiny.top"
   ],
   "projects": [
     {"title": "NCM Downloader", "desc": "A powerful NCM Donwloader that supports built-in metadata", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/NCM-Downloader"},
-    {"title": "HomePage", "desc": "An elegant personal honepage", "icon": "./static/img/home.svg", "url": "https://github.com/xxynet/HomePage"},
-    {"title": "ncm-dl-docker", "desc": "Docker version of NCM-Downloader", "icon": "./static/img/music.svg", "url": "https://github.com/xxynet/ncm-dl-docker"},
-    {"title": "device-status", "desc": "An elegant web page that displays your devices' status", "icon": "./static/img/info.svg", "url": "https://github.com/xxynet/device-status"}
+    {"title": "HomePage", "desc": "An elegant personal honepage", "icon": "./static/i
   ],
   "intro": {
     "lines": [
