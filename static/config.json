@@ -29,7 +29,7 @@
       "am learning foregin languages"
     ],
     "interests": ["web development", "coding in Python", "artificial intelligence", "language learning"],
-    "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho) and a little bit of Japanese/日本語"
+    "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho)"
   },
   "faq": [
     {"q": "When did you start programming?", "a": "I started programming with Scratch when i was in elementary school ... deployed my first ever website on Sep. 20 2021 (it was a blog)"},
@@ -38,6 +38,6 @@
   ],
   "footer": {
     "copyright": "© 2024-2025 Caleb XXY",
-    "sourceUrl": "https://github.com/xxynet/HomePage"
+    "sourceUrl": "https://github.com/acmuhan"
   }
 }
