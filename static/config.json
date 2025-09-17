@@ -20,7 +20,7 @@
   ],
   "intro": {
     "lines": [
-      "Hi, I'm MuHan, really into tech & language, exploring various fields. i..."
+      "Hi, I'm MuHan exploring various fields. i..."
     ],
     "bullets": [
       "create easy-to-use software",
@@ -28,7 +28,7 @@
       "wanna learn photography & editing",
       "am learning foregin languages"
     ],
-    "interests": ["development", "coding in Python,Go,Html,Css", "artificial intelligence", "language learning"],
+    "interests": ["development", "coding in Python,Go,Html,Css", "artificial intelligence", "Network verification"],
     "languages": "Native fluency of Chinese/中文, understanding English (speaking sucks tho)"
   },
   "faq": [
