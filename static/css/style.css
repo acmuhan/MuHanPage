@@ -137,7 +137,7 @@ body {
     cursor: none; /* 隐藏默认鼠标光标 */
 }
 
-/* 动态背景粒子效果 */
+/* 动态背景粒子效果（移动端优化） */
 body::before {
     content: '';
     position: fixed;
@@ -149,9 +149,15 @@ body::before {
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.1) 0%, transparent 50%);
-    animation: floatingBg 20s ease-in-out infinite;
     pointer-events: none;
     z-index: -1;
+}
+
+/* 桌面端启用背景动画 */
+@media (min-width: 769px) and (hover: hover) {
+    body::before {
+        animation: floatingBg 20s ease-in-out infinite;
+    }
 }
 
 @keyframes floatingBg {
@@ -300,7 +306,13 @@ body::before {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 3px solid transparent;
     background-clip: padding-box;
-    animation: logoFloat 6s ease-in-out infinite;
+}
+
+/* 桌面端启用logo浮动动画 */
+@media (min-width: 769px) and (hover: hover) {
+    .logo {
+        animation: logoFloat 6s ease-in-out infinite;
+    }
 }
 
 .logo::before {
@@ -1185,21 +1197,41 @@ footer {
 }
 
 @media (max-width: 800px) {
-
+    /* 移动端性能优化 */
+    * {
+        transition: none !important; /* 禁用过渡动画以提升性能 */
+    }
+    
+    /* 恢复必要的过渡效果 */
+    .tab-button, .projectItem, .iconItem, .iconItemLong {
+        transition: background-color 0.2s ease !important;
+    }
+    
+    /* 移动端恢复默认光标 */
+    body {
+        cursor: auto !important;
+    }
+    
+    /* 减少阴影和模糊效果 */
+    .left-div, .projectItem, .faq-item {
+        backdrop-filter: none !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
 
     .right {
         width: 100%;
     }
-.tanChiShe {
-    width: 100%;
-}
+    
+    .tanChiShe {
+        width: 100%;
+    }
+    
     .description {
         font-size: 16px;
     }
 
     .welcome {
         font-size: 48px;
-
     }
 
     .button-container {
@@ -1288,6 +1320,11 @@ footer {
     .left-main-open {
         left: 0;
     }
+    
+    /* 移动端禁用复杂动画 */
+    @keyframes logoFloat { 0%, 100% { transform: none; } }
+    @keyframes logoGlow { 0%, 100% { opacity: 0.5; } }
+    @keyframes floatingBg { 0%, 100% { transform: none; opacity: 0.3; } }
 
 }
 

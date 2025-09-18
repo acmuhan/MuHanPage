@@ -5,8 +5,18 @@ console.log(' %c  > ^ <', 'color: #f7b267; font-size: 20px;');
 console.log('  %c /  ~ \\', 'color: #f7b267; font-size: 20px;');
 console.log('  %c/______\\', 'color: #f7b267; font-size: 20px;');
 
-// 创建简单的光晕球跟随效果
+// 创建简单的光晕球跟随效果（仅在非触屏设备上启用）
 function initCursor() {
+    // 检测是否为触屏设备
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // 触屏设备不需要自定义光标效果
+    if (isTouchDevice) {
+        // 恢复默认光标
+        document.body.style.cursor = 'auto';
+        return;
+    }
+    
     const glowBall = document.createElement('div');
     glowBall.className = 'glow-ball';
     document.body.appendChild(glowBall);
@@ -45,8 +55,20 @@ function initCursor() {
     });
 }
 
-// 添加滚动动画效果
+// 添加滚动动画效果（移动端简化）
 function initScrollAnimations() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+    // 移动端简化动画
+    if (isMobile) {
+        // 直接显示所有元素，不使用滚动动画
+        document.querySelectorAll('.projectItem, .left-div, .faq-item').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+        return;
+    }
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -65,8 +87,11 @@ function initScrollAnimations() {
     });
 }
 
-// 添加粒子效果
+// 添加粒子效果（移动端优化）
 function initParticles() {
+    // 检测是否为移动设备
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
     const particleContainer = document.createElement('div');
     particleContainer.style.cssText = `
         position: fixed;
@@ -79,7 +104,9 @@ function initParticles() {
     `;
     document.body.appendChild(particleContainer);
     
-    for (let i = 0; i < 20; i++) {
+    // 移动端减少粒子数量，提升性能
+    const particleCount = isMobile ? 8 : 20;
+    for (let i = 0; i < particleCount; i++) {
         createParticle(particleContainer);
     }
 }
@@ -182,10 +209,18 @@ function left() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 初始化所有美化效果
+    // 检测设备性能并初始化相应效果
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    const isLowPerformance = isMobile || navigator.hardwareConcurrency <= 2;
+    
+    // 初始化基础功能
     initCursor();
     initScrollAnimations();
-    initParticles();
+    
+    // 根据设备性能决定是否启用粒子效果
+    if (!isLowPerformance) {
+        initParticles();
+    }
 
     var themeState = getCookie("themeState") || "Light";
     const htmlTag = document.querySelector('html');
