@@ -350,3 +350,93 @@ function toggleFAQ(element) {
         faqItem.classList.add('active');
     }
 }
+
+// 复制QQ号功能
+function copyQQ() {
+    const qqNumber = '2066047450';
+    
+    // 创建临时文本区域
+    const textArea = document.createElement('textarea');
+    textArea.value = qqNumber;
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // 显示复制成功提示
+        showNotification('QQ号已复制：' + qqNumber + '\n请前往QQ添加好友！', 'success');
+        
+        // 播放点击音效
+        playSound('../static/soundeffects/click.mp3');
+        
+    } catch (err) {
+        document.body.removeChild(textArea);
+        showNotification('复制失败，请手动复制：' + qqNumber, 'error');
+    }
+}
+
+// 显示通知功能
+function showNotification(message, type = 'info') {
+    // 创建通知元素
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = message.replace(/\n/g, '<br>');
+    
+    // 添加样式
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 300px;
+        animation: slideInNotification 0.3s ease-out;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // 3秒后自动移除
+    setTimeout(() => {
+        notification.style.animation = 'slideOutNotification 0.3s ease-in forwards';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// 添加通知动画样式
+const notificationStyles = document.createElement('style');
+notificationStyles.textContent = `
+    @keyframes slideInNotification {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutNotification {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(notificationStyles);

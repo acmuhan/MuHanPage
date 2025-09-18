@@ -675,6 +675,18 @@ body::before {
     background: var(--icon-5-hover-color);
 }
 
+.iconItem:nth-child(6):hover {
+    background: #5865F2; /* Discord 蓝色 */
+}
+
+.iconItem:nth-child(7):hover {
+    background: #12B7F5; /* QQ 蓝色 */
+}
+
+.iconItem:nth-child(8):hover {
+    background: #FF6B35; /* QQ群 橙色 */
+}
+
 /* .iconItem:nth-child(6):hover {
     background: var(--icon-6-hover-color);
 } */
