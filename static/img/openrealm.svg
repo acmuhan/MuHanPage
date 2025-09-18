@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cubeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C084FC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#C084FC;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Glow effect -->
+  <rect x="20" y="20" width="60" height="60" rx="8" fill="url(#glowGradient)" opacity="0.6" transform="scale(1.1)" />
+  
+  <!-- Main cube structure -->
+  <g transform="translate(50, 50)">
+    <!-- Top face -->
+    <path d="M-20,-10 L0,-20 L20,-10 L0,0 Z" fill="url(#cubeGradient)" opacity="0.9"/>
+    
+    <!-- Left face -->
+    <path d="M-20,-10 L0,0 L0,20 L-20,10 Z" fill="url(#cubeGradient)" opacity="0.7"/>
+    
+    <!-- Right face -->
+    <path d="M0,0 L20,-10 L20,10 L0,20 Z" fill="url(#cubeGradient)" opacity="0.8"/>
+    
+    <!-- Inner glow -->
+    <circle cx="0" cy="-5" r="8" fill="#8B5CF6" opacity="0.6" filter="blur(2px)"/>
+    
+    <!-- Central orb -->
+    <circle cx="0" cy="-5" r="4" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="0" cy="-5" r="2" fill="#8B5CF6" opacity="1"/>
+  </g>
+  
+  <!-- Subtle outer glow -->
+  <circle cx="50" cy="45" r="35" fill="none" stroke="url(#glowGradient)" stroke-width="1" opacity="0.3"/>
+</svg>

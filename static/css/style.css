@@ -1131,7 +1131,42 @@ footer {
 
 .footer-links:hover {
     color: var(--footer-text-hover-color);
-    transition: 0.3;
+    transition: 0.3s;
+}
+
+/* 赞助商相关样式 */
+.sponsor-text {
+    color: var(--footer-text-color);
+    font-size: 13px;
+}
+
+.sponsor-link {
+    color: var(--purple-text-color) !important;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(108, 99, 255, 0.1);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.sponsor-link:hover {
+    color: #ffffff !important;
+    background: var(--purple-text-color) !important;
+    border-color: var(--purple-text-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.sponsor-link svg {
+    transition: transform 0.3s ease;
+}
+
+.sponsor-link:hover svg {
+    transform: scale(1.1);
 }
 
 
