@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @font-face {
     font-family: "a";
     /* 中文字体（按需引入本地/在线字体文件） */
@@ -45,12 +47,19 @@
 }
 
 * {
-    font-family: "b", "a", sans-serif;
+    font-family: "Inter", "b", "a", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
-    transition: all 0.1s ease;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 改善字体渲染 */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a:hover,
@@ -120,11 +129,44 @@ body {
     height: 100%;
     min-height: 100vh;
     width: 100%;
-    background: var(--main-bg-color);
+    background: linear-gradient(135deg, var(--main-bg-color) 0%, var(--icon-bg-color) 100%);
     overflow-x: hidden;
     justify-content: center;
     color: var(--main-text-color);
+    position: relative;
+    cursor: none; /* 隐藏默认鼠标光标 */
+}
 
+/* 动态背景粒子效果 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 200, 255, 0.1) 0%, transparent 50%);
+    animation: floatingBg 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes floatingBg {
+    0%, 100% { 
+        opacity: 0.5;
+        transform: scale(1) rotate(0deg);
+    }
+    33% { 
+        opacity: 0.8;
+        transform: scale(1.1) rotate(120deg);
+    }
+    66% { 
+        opacity: 0.3;
+        transform: scale(0.9) rotate(240deg);
+    }
 }
 
 #PageLoading {
@@ -254,9 +296,39 @@ body {
     margin-top: 50px;
     background-size: cover;
     border-radius: 50%;
-    
     transition: all 0.8s ease-in-out;
-   
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    animation: logoFloat 6s ease-in-out infinite;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    border-radius: 50%;
+    z-index: -1;
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes logoGlow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.5; }
 }
 
 
@@ -268,11 +340,16 @@ body {
     margin-top: 15px;
     padding: 20px;
     background: var(--project-item-bg-color);
-    /* rgba(249, 250, 251, 0.6) */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
 }
 
 .left-div:hover {
-    box-shadow: 0 0 16px var(--pop-up-box-shadow);
+    box-shadow: 0 8px 32px var(--pop-up-box-shadow);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .left-des {
@@ -306,9 +383,34 @@ body {
     height: 28px;
     padding: 10px;
     font-size: 13px;
-    border-radius: 10px;
+    border-radius: 15px;
     background: var(--main-bg-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
 
+.left-tag-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.left-tag-item:hover {
+    background: var(--purple-text-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+.left-tag-item:hover::before {
+    left: 100%;
 }
 
 #line {
@@ -366,16 +468,34 @@ body {
 }
 
 .welcome {
-
     font-size: 55px;
     font-weight: 800;
     margin: 30px 0;
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .description {
-
     font-size: 20px;
     margin-top: 7px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .gradientText {
@@ -434,7 +554,7 @@ body {
     align-items: center;
     overflow-x: scroll;
     margin-top: 20px;
-
+    animation: slideInUp 1s ease-out 0.4s both;
 }
 
 .iconContainer::-webkit-scrollbar {
@@ -448,14 +568,40 @@ body {
     height: 40px;
     box-sizing: border-box;
     background: var(--icon-bg-color);
-    border-radius: 7px;
+    border-radius: 12px;
     display: flex;
     gap: 5px;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
     cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.iconItem::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.iconItem:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.iconItem:active {
+    transform: scale(0.95);
 }
 
 .iconItemLong {
@@ -463,13 +609,39 @@ body {
     height: 40px;
     box-sizing: border-box;
     background: var(--icon-bg-color);
-    border-radius: 7px;
+    border-radius: 12px;
     display: flex;
     gap: 5px;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.iconItemLong::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.iconItemLong:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.iconItemLong:active {
+    transform: scale(0.95);
 }
 
 .switch {
@@ -519,12 +691,20 @@ body {
 
 .tanChiShe {
     width: 85%;
+    animation: slideInUp 1s ease-out 0.6s both;
+    transform: translateY(20px);
+    opacity: 0;
 }
 
 .tanChiShe img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.tanChiShe img:hover {
+    transform: scale(1.05);
 }
 
 .title {
@@ -535,9 +715,41 @@ body {
     font-weight: 800;
     margin: 20px 0;
     transition: all 0.4s ease;
+    letter-spacing: -0.01em;
+    position: relative;
 }
 
-/* 删除占位的悬停样式，避免空规则集 */
+.title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-middle));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.title:hover::before {
+    width: 50px;
+}
+
+/* 光晕球跟随效果 */
+.glow-ball {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(79, 140, 255, 0.6) 0%, rgba(160, 132, 232, 0.3) 50%, transparent 100%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.4;
+    filter: blur(1px);
+}
 
 .button-container {
     display: flex;
@@ -546,9 +758,22 @@ body {
     align-items: center;
     padding: 8px;
     background: var(--project-item-bg-color);
-    border-radius: 16px;
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 0.8s ease-out 0.5s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 删除占位的悬停样式，避免空规则集 */
@@ -557,7 +782,7 @@ body {
     flex: 1;
     padding: 12px 24px;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     background: transparent;
     color: var(--project-item-left-text-color);
     font-size: 15px;
@@ -571,6 +796,22 @@ body {
     align-items: center;
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
+    border: 1px solid transparent;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.tab-button:hover::before {
+    left: 100%;
 }
 
 .tab-button:not(.but-active):hover {
@@ -580,12 +821,14 @@ body {
 }
 
 .but-active {
-    background: var(--purple-text-color);
+    background: linear-gradient(135deg, var(--purple-text-color), var(--gradient-middle));
     color: white;
-    /* box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3); */
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.but-active::before {
+.but-active::after {
     content: '';
     position: absolute;
     top: 0;
@@ -593,7 +836,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 16px;
     pointer-events: none;
 }
 
@@ -629,21 +872,41 @@ body {
 /* FAQ Styles */
 .faq-container {
     margin: 20px 0;
+    animation: slideInUp 1s ease-out 0.7s both;
 }
 
 .faq-item {
     background: var(--project-item-bg-color);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.6s;
+}
+
+.faq-item:hover::before {
+    left: 100%;
 }
 
 .faq-item:hover {
     background: var(--project-item-hover-color); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .faq-question {
@@ -753,16 +1016,37 @@ body {
 .projectItem {
     display: flex;
     background-color: var(--project-item-bg-color);
-    border-radius: 8px;
-    padding: 18px;
-    height: 105px;
+    border-radius: 16px;
+    padding: 24px;
+    height: 120px;
     width: calc(50% - 60px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
 }
 
+.projectItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
 
 .projectItem:hover {
-    box-shadow: 0 8px 16px -4px #2c2d300c;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     background-color: var(--project-item-hover-color);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.projectItem:hover::before {
+    left: 100%;
 }
 
 
@@ -824,6 +1108,9 @@ footer {
     color: var(--footer-text-color);
     font-size: 13px;
     margin-top: 20px;
+    animation: fadeIn 1s ease-out 1s both;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 .footer-links {
