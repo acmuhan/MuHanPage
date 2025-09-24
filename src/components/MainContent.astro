@@ -1,0 +1,274 @@
+---
+// Main content component with tabs and project sections
+---
+
+<!-- 选项卡按钮 -->
+<div class="button-container">
+    <button class="tab-button but-active" onclick="openTab('tab1')"
+        >Projects</button
+    >
+    <button class="tab-button" onclick="openTab('tab2')">Intro</button>
+    <button class="tab-button" onclick="openTab('tab3')">FAQ</button>
+</div>
+
+<div id="tab1" class="tab-content content-active">
+    <div class="title">
+        <svg
+            t="1705257422086"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1891"
+            width="26px"
+            height="26px"
+        >
+            <path
+                d="M629.333333 202.666667v213.333333h277.333334v448h-512v-213.333333h-277.333334v-448h512z m213.333334 277.333333h-213.333334v170.666667h-170.666666v149.333333h384v-320z m-277.333334-213.333333h-384v320h213.333334v-170.666667h170.666666v-149.333333z m0 213.333333h-106.666666v106.666667h106.666666v-106.666667z"
+                fill="#000000"
+                p-id="1892"></path>
+        </svg>
+        WebSites
+    </div>
+    <div class="projectList">
+        <a class="projectItem" target="_blank" href="https://blog.muhan.wiki">
+            <div class="projectItemLeft">
+                <h1>Blog</h1>
+                <p>我的个人博客</p>
+            </div>
+            <div class="projectItemRight">
+                <img src="/img/blog.svg" alt="" />
+            </div>
+        </a>
+    </div>
+
+    <div class="title">
+        <svg
+            t="1705257422086"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1891"
+            width="26px"
+            height="26px"
+        >
+            <path
+                d="M629.333333 202.666667v213.333333h277.333334v448h-512v-213.333333h-277.333334v-448h512z m213.333334 277.333333h-213.333334v170.666667h-170.666666v149.333333h384v-320z m-277.333334-213.333333h-384v320h213.333334v-170.666667h170.666666v-149.333333z m0 213.333333h-106.666666v106.666667h106.666666v-106.666667z"
+                fill="#000000"
+                p-id="1892"></path>
+        </svg>
+        Projects
+    </div>
+    <div class="projectList">
+        <a class="projectItem" target="_blank" href="https://www.copenrealm.cn">
+            <div class="projectItemLeft">
+                <h1>OpenRealm</h1>
+                <p>
+                    OpenRealm的官方网站,一个充满开放的领域服务器，具有科技、养老、PVP为一体的服务器，打造玩家生态与体验
+                </p>
+            </div>
+            <div class="projectItemRight">
+                <img src="/img/openrealm.svg" alt="OpenRealm" />
+            </div>
+        </a>
+        <a
+            class="projectItem"
+            target="_blank"
+            href="https://discord.gg/orproxy"
+        >
+            <div class="projectItemLeft">
+                <h1>Orproxy Discord</h1>
+                <p>orproxy的Discord服务器</p>
+            </div>
+            <div class="projectItemRight">
+                <img
+                    src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+                    alt="Discord"
+                />
+            </div>
+        </a>
+        <a
+            class="projectItem"
+            target="_blank"
+            href="https://discord.gg/orproxy"
+        >
+            <div class="projectItemLeft">
+                <h1>Proxy</h1>
+                <p>这是一个强大的IP转发服务，转为我的世界而编写</p>
+            </div>
+            <div class="projectItemRight">
+                <img src="/img/openrealm.svg" alt="Proxy" />
+            </div>
+        </a>
+    </div>
+
+    <div class="title">
+        <svg
+            t="1705257823317"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="7833"
+            width="26px"
+            height="26px"
+        >
+            <path
+                d="M395.765333 586.570667h-171.733333c-22.421333 0-37.888-22.442667-29.909333-43.381334L364.768 95.274667A32 32 0 0 1 394.666667 74.666667h287.957333c22.72 0 38.208 23.018667 29.632 44.064l-99.36 243.882666h187.050667c27.509333 0 42.186667 32.426667 24.042666 53.098667l-458.602666 522.56c-22.293333 25.408-63.626667 3.392-54.976-29.28l85.354666-322.421333zM416.714667 138.666667L270.453333 522.581333h166.869334a32 32 0 0 1 30.933333 40.181334l-61.130667 230.954666 322.176-367.114666H565.312c-22.72 0-38.208-23.018667-29.632-44.064l99.36-243.882667H416.714667z"
+                fill="#000000"
+                p-id="7834"></path>
+        </svg>
+        Skills
+    </div>
+    <div class="skill">
+        <img id="skillPc" src="/svg/skillPc.svg" alt="" srcset="" />
+        <img id="skillWap" src="/svg/skillWap.svg" alt="" srcset="" />
+    </div>
+</div>
+
+<div id="tab2" class="tab-content">
+    <div class="title">
+        <svg
+            t="1705257422086"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1891"
+            width="26px"
+            height="26px"
+        >
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                fill="#000000"
+                p-id="1892"></path>
+            <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+                fill="#000000"
+                p-id="1893"></path>
+        </svg>
+        Introduction
+    </div>
+    <div class="intro-content">
+        <p>Hi, I'm MuHan exploring various fields. i...</p>
+
+        <ul class="intro-ul">
+            <li>create easy-to-use software</li>
+            <li>
+                make open source projects on <a
+                    class="highlight-link"
+                    target="_blank"
+                    href="https://github.com/acmuhan">Github</a>
+            </li>
+            <li>wanna learn photography & editing</li>
+            <li>am learning foregin languages</li>
+        </ul>
+
+        <h3>MY INTERESTS</h3>
+        <ul class="intro-ul">
+            <li>development</li>
+            <li>coding in Python,Go,Html,Css</li>
+            <li>artificial intelligence</li>
+            <li>Network verification</li>
+        </ul>
+
+        <h3>LANGUAGE PROFICIENCY</h3>
+        <p>
+            Native fluency of <span class="highlight-text">Chinese/中文</span>,
+            understanding <span class="highlight-text">English</span> (speaking sucks
+            tho)
+        </p>
+    </div>
+</div>
+
+<div id="tab3" class="tab-content">
+    <div class="title">
+        <svg
+            t="1705257422086"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1891"
+            width="26px"
+            height="26px"
+        >
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                fill="#000000"
+                p-id="1892"></path>
+            <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+                fill="#000000"
+                p-id="1893"></path>
+        </svg>
+        FAQ
+    </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>When did you start programming?</span>
+                <svg
+                    class="faq-arrow"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                >
+                    <path fill="currentColor" d="M7 10l5 5 5-5z"></path>
+                </svg>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    I started programming with <span class="highlight-text"
+                        >Scratch</span
+                    > when i was in elementary school ... deployed my first ever
+                    website on Sep. 20 2021 (it was a blog)
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How can I contact you?</span>
+                <svg
+                    class="faq-arrow"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                >
+                    <path fill="currentColor" d="M7 10l5 5 5-5z"></path>
+                </svg>
+            </div>
+            <div class="faq-answer">
+                <p>You can reach me through GitHub and Email</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span
+                    >How did you fall into the rabbit hole of language learning?</span
+                >
+                <svg
+                    class="faq-arrow"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                >
+                    <path fill="currentColor" d="M7 10l5 5 5-5z"></path>
+                </svg>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    inspired by <a
+                        class="highlight-link"
+                        target="_blank"
+                        href="https://www.bilibili.com/video/BV1ns4y1A7fj/"
+                        >this vid</a
+                    > & yt vids related to comprehensible input
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

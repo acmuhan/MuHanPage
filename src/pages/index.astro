@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Header from "../components/Header.astro";
+import MainContent from "../components/MainContent.astro";
+---
+
+<BaseLayout title="Hello, I'm MuHan">
+    <div class="main">
+        <Sidebar />
+        <div class="right">
+            <Header />
+            <MainContent />
+
+            <!-- 页脚 -->
+            <footer>
+                © 2022-2025 MuHan &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a
+                    href="https://github.com/acmuhan/MuHanPage"
+                    target="_blank"
+                    class="footer-links">SourceCode</a
+                >
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span class="sponsor-text">CDN 赞助商：</span>
+                <a
+                    href="https://edgeone.ai/zh/redemption"
+                    target="_blank"
+                    class="footer-links sponsor-link"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="16"
+                        height="16"
+                        style="vertical-align: middle; margin-right: 4px;"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                        ></path>
+                    </svg>
+                    EdgeOne
+                </a>
+            </footer>
+        </div>
+    </div>
+</BaseLayout>

@@ -9,37 +9,37 @@ console.log('  %c/______\\', 'color: #f7b267; font-size: 20px;');
 function initCursor() {
     // 检测是否为触屏设备
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
+
     // 触屏设备不需要自定义光标效果
     if (isTouchDevice) {
         // 恢复默认光标
         document.body.style.cursor = 'auto';
         return;
     }
-    
+
     const glowBall = document.createElement('div');
     glowBall.className = 'glow-ball';
     document.body.appendChild(glowBall);
-    
+
     let mouseX = 0, mouseY = 0;
     let ballX = 0, ballY = 0;
-    
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
-    
+
     function animateBall() {
         ballX += (mouseX - ballX) * 0.08;
         ballY += (mouseY - ballY) * 0.08;
-        
+
         glowBall.style.left = ballX - 10 + 'px';
         glowBall.style.top = ballY - 10 + 'px';
-        
+
         requestAnimationFrame(animateBall);
     }
     animateBall();
-    
+
     // 悬停效果
     const hoverElements = document.querySelectorAll('a, button, .tab-button, .projectItem, .iconItem, .iconItemLong, .left-tag-item');
     hoverElements.forEach(el => {
@@ -47,7 +47,7 @@ function initCursor() {
             glowBall.style.transform = 'scale(1.3)';
             glowBall.style.opacity = '0.8';
         });
-        
+
         el.addEventListener('mouseleave', () => {
             glowBall.style.transform = 'scale(1)';
             glowBall.style.opacity = '0.4';
@@ -58,7 +58,7 @@ function initCursor() {
 // 添加滚动动画效果（移动端简化）
 function initScrollAnimations() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-    
+
     // 移动端简化动画
     if (isMobile) {
         // 直接显示所有元素，不使用滚动动画
@@ -68,7 +68,7 @@ function initScrollAnimations() {
         });
         return;
     }
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -77,7 +77,7 @@ function initScrollAnimations() {
             }
         });
     }, { threshold: 0.1 });
-    
+
     // 为项目卡片添加动画
     document.querySelectorAll('.projectItem, .left-div, .faq-item').forEach(el => {
         el.style.opacity = '0';
@@ -91,7 +91,7 @@ function initScrollAnimations() {
 function initParticles() {
     // 检测是否为移动设备
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-    
+
     const particleContainer = document.createElement('div');
     particleContainer.style.cssText = `
         position: fixed;
@@ -103,7 +103,7 @@ function initParticles() {
         z-index: -1;
     `;
     document.body.appendChild(particleContainer);
-    
+
     // 移动端减少粒子数量，提升性能
     const particleCount = isMobile ? 8 : 20;
     for (let i = 0; i < particleCount; i++) {
@@ -121,12 +121,12 @@ function createParticle(container) {
         border-radius: 50%;
         animation: float ${Math.random() * 10 + 10}s linear infinite;
     `;
-    
+
     particle.style.left = Math.random() * 100 + '%';
     particle.style.animationDelay = Math.random() * 10 + 's';
-    
+
     container.appendChild(particle);
-    
+
     // 添加浮动动画
     const style = document.createElement('style');
     style.textContent = `
@@ -153,8 +153,8 @@ function createParticle(container) {
 
 
 
-document.addEventListener('contextmenu', function(event) {
-  event.preventDefault(); // 阻止默认的上下文菜单行为
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault(); // 阻止默认的上下文菜单行为
 });
 
 
@@ -164,16 +164,16 @@ function openTab(tabName) {
     for (var i = 0; i < tabContents.length; i++) {
         tabContents[i].classList.remove('content-active');
     }
-    
+
     // Remove active class from all buttons
     var tabButtons = document.getElementsByClassName('tab-button');
     for (var i = 0; i < tabButtons.length; i++) {
         tabButtons[i].classList.remove('but-active');
     }
-    
+
     // Show the selected tab content
     document.getElementById(tabName).classList.add('content-active');
-    
+
     // Add active class to the clicked button
     event.target.classList.add('but-active');
 }
@@ -197,8 +197,8 @@ function PopUp(imageURL) {
 }
 
 function playSound(soundUrl) {
-  const audio = new Audio(soundUrl);
-  audio.play().catch(e => console.error("Failed to play sound effect:", e));
+    const audio = new Audio(soundUrl);
+    audio.play().catch(e => console.error("Failed to play sound effect:", e));
 }
 
 function left() {
@@ -212,11 +212,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // 检测设备性能并初始化相应效果
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
     const isLowPerformance = isMobile || navigator.hardwareConcurrency <= 2;
-    
+
     // 初始化基础功能
     initCursor();
     initScrollAnimations();
-    
+
     // 根据设备性能决定是否启用粒子效果
     if (!isLowPerformance) {
         initParticles();
@@ -245,12 +245,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (theme == "Dark") {
             themeState = "Dark";
             changeSvg("#ffffff");
-            tanChiShe.src = "./static/svg/snake-Dark.svg";
+            tanChiShe.src = "/svg/snake-Dark.svg";
             htmlTag.dataset.theme = 'dark';
         } else if (theme == "Light") {
             themeState = "Light";
             changeSvg("#000000");
-            tanChiShe.src = "./static/svg/snake-Light.svg";
+            tanChiShe.src = "/svg/snake-Light.svg";
             htmlTag.dataset.theme = '';
         }
         setCookie("themeState", theme, 365);
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
             playSound('../static/soundeffects/click.mp3');
         });
     });
@@ -362,13 +362,13 @@ function toggleFAQ(element) {
     const isActive = faqItem.classList.contains('active');
 
     playSound('../static/soundeffects/collapsible_open.mp3')
-    
+
     // 添加点击动画效果
     element.style.transform = 'scale(0.98)';
     setTimeout(() => {
         element.style.transform = 'scale(1)';
     }, 100);
-    
+
     // Close all other FAQ items
     // const allFaqItems = document.querySelectorAll('.faq-item');
     // allFaqItems.forEach(item => {
@@ -379,7 +379,7 @@ function toggleFAQ(element) {
     if (isActive) {
         faqItem.classList.remove('active');
     }
-    
+
     // Toggle current FAQ item
     if (!isActive) {
         faqItem.classList.add('active');
@@ -389,23 +389,23 @@ function toggleFAQ(element) {
 // 复制QQ号功能
 function copyQQ() {
     const qqNumber = '2066047450';
-    
+
     // 创建临时文本区域
     const textArea = document.createElement('textarea');
     textArea.value = qqNumber;
     document.body.appendChild(textArea);
     textArea.select();
-    
+
     try {
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        
+
         // 显示复制成功提示
         showNotification('QQ号已复制：' + qqNumber + '\n请前往QQ添加好友！', 'success');
-        
+
         // 播放点击音效
         playSound('../static/soundeffects/click.mp3');
-        
+
     } catch (err) {
         document.body.removeChild(textArea);
         showNotification('复制失败，请手动复制：' + qqNumber, 'error');
@@ -418,7 +418,7 @@ function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.innerHTML = message.replace(/\n/g, '<br>');
-    
+
     // 添加样式
     notification.style.cssText = `
         position: fixed;
@@ -437,9 +437,9 @@ function showNotification(message, type = 'info') {
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // 3秒后自动移除
     setTimeout(() => {
         notification.style.animation = 'slideOutNotification 0.3s ease-in forwards';
