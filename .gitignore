@@ -1,3 +1,6 @@
+# Local editor tool (not for commit)
+tools/
+
 # Astro build output
 dist/
 
